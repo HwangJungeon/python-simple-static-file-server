@@ -32,6 +32,7 @@ def is_valid_user_agent(user_agent):
 
 @app.route('/<path:file_path>')
 def get_user_file(file_path):
+    file_path = f'assets/{file_path}'
     start_time = time.time()  # 요청 처리 시작 시간 기록
 
     user_agent = request.headers.get('User-Agent')
