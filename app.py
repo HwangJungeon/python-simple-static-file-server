@@ -13,7 +13,7 @@ app = Flask(__name__)
 log_timezone = pytz.timezone('Asia/Seoul')
 
 # 로그 설정
-log_file_path = 'app.log'
+log_file_path = 'logs/app.log'
 handler = RotatingFileHandler(log_file_path, maxBytes=10000, backupCount=10)
 handler.setLevel(logging.INFO)
 
@@ -85,4 +85,4 @@ def favicon():
     return '', 204
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=7979)
